@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>quiz</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRETSON</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #222;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .caixadeescrever {
+            width: 400px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #resposta {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+      <br>
+      <br>
+      <b><h1>QUIZ!!!!!!!!!!!!!</h1></b>
+      <br>
+      <p>
+      Em um bolso possui 2 bananas de bolso extra, enquanto no outro bolso possui 2 bananas também. Quantas bananas de bolso possui no total?
+        </p>
+      <br>
+      <br>
+   
+      <input type="search" placeholder="" autofocus id="txt" class="caixadeescrever" onkeydown="if (event.keyCode === 13) verifica();">
+        <h1 id="resposta">Sua resposta aqui</h1>
+    </center>
+
+    <script>
+        function salvar(cname, cvalue) {
+            localStorage.setItem(cname, cvalue);
+        }
+
+        function carregar(cname) {
+            return localStorage.getItem(cname) || "";
+        }
+
+        function maiuscula(z) {
+            z.value = z.value.toUpperCase();
+        }
+
+        function verifica() {
+            const questao = document.getElementById("txt").value.trim().toUpperCase();
+            const resposta = carregar(questao);
+
+            switch (true) {
+                case resposta !== "":
+                    document.getElementById("resposta").innerHTML = `<p>${resposta}</p>`;
+                    break;
+
+                case comprimentos.includes(questao):
+                    document.getElementById("resposta").innerHTML = `<p>${textos[Math.floor(Math.random() * textos.length)]}</p>`;
+                    break;
+
+                case BOANOITE.includes(questao):
+                    document.getElementById("resposta").innerHTML = `<p>${BOANOITEresp[Math.floor(Math.random() * BOANOITEresp.length)]}</p>`;
+                    break;
+
+                case BASEHTML.includes(questao):
+                    document.getElementById("resposta").innerHTML = `<textarea><html><head>&lt;script&gt;&lt;/script&gt;</head><body></body></html></textarea>`;
+                    break;
+
+                case COMOVAI.includes(questao):
+                    document.getElementById("resposta").innerHTML = `<p>${COMOVAIresp[Math.floor(Math.random() * COMOVAIresp.length)]}</p>`;
+                    break;
+                
+                case BOMDIA.includes(questao):
+                    document.getElementById("resposta").innerHTML = `<p>${BOMDIAresp[Math.floor(Math.random() * BOMDIAresp.length)]}</p>`;
+                    break;
+
+                case BOATARDE.includes(questao):
+                    document.getElementById("resposta").innerHTML = `<p>${BOATARDEresp[Math.floor(Math.random() * BOATARDEresp.length)]}</p>`;
+                    break;
+                
+                case TEMA1.includes(questao):
+                    document.body.style.backgroundColor = "#333";
+                    break;
+
+                case TEMAAPAGADO.includes(questao):
+                    document.body.style.backgroundColor = "#000";
+                    break;
+
+                case corpofundo.includes(questao):
+                    document.body.style.backgroundColor = "orange";
+                    break;
+
+                case CALCULADORA.includes(questao):
+                    document.getElementById("resposta").innerHTML = `<div><form name="calculator"><input type="text" name="answer" /><br><input type="button" value="CALCULAR" onclick="calculator.answer.value = eval(calculator.answer.value)"></form></div>`;
+                    break;
+
+                case limpar.includes(questao):
+                    location.reload();
+                    break;
+
+                default:
+                    aprender();
+                    break;
+            }
+        }
+
+        function aprender() {
+            document.getElementById("resposta").innerHTML = `
+                <p>Você tem certeza??</p>
+                <input type='text' class='caixadeescrever' id='aprender'>
+                <button class='button' onclick='aprende()'>Aprender</button>
+            `;
+        }
+    </script>
+</body>
+</html>
+</body>
+</html>
